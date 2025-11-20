@@ -6,19 +6,19 @@ class ShippingStrategyInterface
   end
 end
 
-class FedexShippingStrategy
+class FedexShippingStrategy < ShippingStrategyInterface
   def calculate(order)
     order.weight * 10 + 15
   end
 end
 
-class AramexShippingStrategy
+class AramexShippingStrategy < ShippingStrategyInterface
   def calculate(order)
     order.weight * 8 + 10
   end
 end
 
-class DHLShippingStrategy
+class DHLShippingStrategy < ShippingStrategyInterface
   def calculate(order)
     order.weight * 12 + 20
   end
